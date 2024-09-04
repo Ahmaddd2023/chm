@@ -9,60 +9,7 @@
     <h1 class="waitlist__title waitlist__title--mobile">
       Welcome to a new era of content creation
     </h1>
-    <form [formGroup]="emailFormFirst" class="waitlist__form">
-      <div class="input-group input-group--loader">
-        <label for="email">Email</label>
-        <input
-          formControlName="email"
-          type="email"
-          id="email"
-          placeholder="Your email"
-          (keyup.enter)="saveEmailFirst()"
-        />
-        <button
-          *ngIf="!isLoaderFirst"
-          (click)="saveEmailFirst()"
-          class="btn-waitlist"
-          type="button"
-          [disabled]="
-            !getEmailFirst?.value || emailFormFirst.invalid || isLoaderFirst
-          "
-        >
-          <span>Join the waitlist</span>
-          <img src="/assets/images/icons/btn-arrow.svg" alt=""/>
-        </button>
-        <button
-          *ngIf="isLoaderFirst"
-          class="btn-waitlist btn-waitlist--loader"
-          type="button"
-        >
-          <span class="loader-waitlist">
-            <span class="loader-waitlist__primary"></span>
-          </span>
-        </button>
-      </div>
-      <button class="waitlist__btn-secure btn-secure">secure your spot</button>
-      <p
-        *ngIf="getEmailFirst?.invalid && getEmailFirst?.touched"
-        class="waitlist__message text"
-      >
-        <span
-          *ngIf="
-            getEmailFirst &&
-            getEmailFirst.errors &&
-            getEmailFirst.errors['pattern']
-          "
-        >
-          Enter the correct email!
-        </span>
-      </p>
-      <p
-        *ngIf="errorEmail"
-        class="waitlist__message text"
-      >
-        {{ errorEmail }}
-      </p>
-    </form>
+    
   </div>
 </header>
 <main>
@@ -149,64 +96,7 @@
       <h2 class="waitlist__title waitlist__title--mobile">
         Dive into the future of content creation!
       </h2>
-      <form [formGroup]="emailFormSecond" class="waitlist__form">
-        <div class="input-group">
-          <label for="email-2">Email</label>
-          <input
-            formControlName="email"
-            type="email"
-            id="email-2"
-            placeholder="Your email"
-            (keyup.enter)="saveEmailSecond()"
-          />
-          <button
-            *ngIf="!isLoaderSecond"
-            (click)="saveEmailSecond()"
-            class="btn-waitlist"
-            type="button"
-            [disabled]="
-              !getEmailSecond?.value ||
-              emailFormSecond.invalid ||
-              isLoaderSecond
-            "
-          >
-            <span>Join the waitlist</span>
-            <img src="/assets/images/icons/btn-arrow.svg" alt=""/>
-          </button>
-          <button
-            *ngIf="isLoaderSecond"
-            class="btn-waitlist btn-waitlist--loader"
-            type="button"
-          >
-            <span class="loader-waitlist">
-              <span class="loader-waitlist__primary"></span>
-            </span>
-          </button>
-        </div>
-        <button class="waitlist__btn-secure btn-secure">
-          secure your spot
-        </button>
-        <p
-          *ngIf="getEmailSecond?.invalid && getEmailSecond?.touched"
-          class="waitlist__message text"
-        >
-          <span
-            *ngIf="
-              getEmailSecond &&
-              getEmailSecond.errors &&
-              getEmailSecond.errors['pattern']
-            "
-          >
-            Enter the correct email!
-          </span>
-        </p>
-        <p
-          *ngIf="errorEmail"
-          class="waitlist__message text"
-        >
-          {{ errorEmail }}
-        </p>
-      </form>
+      
     </div>
   </section>
 
@@ -305,62 +195,7 @@
           Catapult your creative expression to unparalleled heights
         </p>
       </div>
-      <form [formGroup]="emailFormThird" class="waitlist__form">
-        <div class="input-group">
-          <label for="email-3">Email</label>
-          <input
-            formControlName="email"
-            type="email"
-            id="email-3"
-            placeholder="Your email"
-            (keyup.enter)="saveEmailThird()"
-          />
-          <button
-            *ngIf="!isLoaderThird"
-            (click)="saveEmailThird()"
-            class="btn-waitlist"
-            type="button"
-            [disabled]="
-              !getEmailThird?.value || emailFormThird.invalid || isLoaderThird
-            "
-          >
-            <span>Join the waitlist</span>
-            <img src="/assets/images/icons/btn-arrow.svg" alt=""/>
-          </button>
-          <button
-            *ngIf="isLoaderThird"
-            class="btn-waitlist btn-waitlist--loader"
-            type="button"
-          >
-            <span class="loader-waitlist">
-              <span class="loader-waitlist__primary"></span>
-            </span>
-          </button>
-        </div>
-        <button class="waitlist__btn-secure btn-secure">
-          secure your spot
-        </button>
-        <p
-          *ngIf="getEmailThird?.invalid && getEmailThird?.touched"
-          class="waitlist__message text"
-        >
-          <span
-            *ngIf="
-              getEmailThird &&
-              getEmailThird.errors &&
-              getEmailThird.errors['pattern']
-            "
-          >
-            Enter the correct email!
-          </span>
-        </p>
-        <p
-          *ngIf="errorEmail"
-          class="waitlist__message text"
-        >
-          {{ errorEmail }}
-        </p>
-      </form>
+     
     </div>
   </section>
 
@@ -405,12 +240,8 @@
     <div class="l-footer__content">
       <p class="l-footer__copy">2023 ChampAI. All rights reserved.</p>
       <div class="l-footer__info">
-        <a class="l-footer__link" routerLink="/terms-of-service">
-          Terms of Service
-        </a>
-        <a class="l-footer__link" routerLink="/privacy-policy"
-        >Privacy Policy</a
-        >
+      
+        
       </div>
     </div>
   </div>
