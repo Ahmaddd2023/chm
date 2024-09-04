@@ -1,0 +1,36 @@
+/* ------------------------------- pop-up ------------------------------- */
+.pop-up {
+  height: 100%;
+
+  .pop-up__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 20px;
+  }
+
+  .pop-up__content {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  .pop-up__text {
+    margin: 0;
+
+    text-align: center;
+
+    color: $black-semi;
+  }
+
+  .pop-up__btn {
+    display: flex;
+    justify-content: flex-end;
+
+    button {
+      width: auto;
+      height: 45px;
+    }
+  }
+}

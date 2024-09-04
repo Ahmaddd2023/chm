@@ -1,0 +1,237 @@
+// -----------------------------------------------------------------------------
+// Common block styles
+// -----------------------------------------------------------------------------
+
+/* ------------------------------- waitlist ------------------------------- */
+.waitlist {
+  background-image: url("/assets/images/other/bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .waitlist__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 140px 20px;
+
+    @include respond-to("md") {
+      padding: 100px 20px;
+    }
+
+    &.waiting-list {
+      justify-content: center;
+      height: 100%;
+      padding: 0 20px;
+
+      @include respond-to("md") {
+        padding: 0 20px;
+      }
+    }
+  }
+
+  .waitlist__logo {}
+
+  .waitlist__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .waitlist__title {
+    text-align: center;
+    font-family: "Space Quest", sans-serif;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    color: $white;
+
+    @include respond-to("md") {
+      font-size: 32px;
+    }
+  }
+
+  .waitlist__title--desktop {
+    display: block;
+
+    @include respond-to("md") {
+      display: none;
+    }
+  }
+
+  .waitlist__title--mobile {
+    display: none;
+
+    @include respond-to("md") {
+      display: block;
+    }
+  }
+
+  .waitlist__text {
+    font-family: "SF Pro Display", sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+
+    color: $grey;
+
+    @include respond-to("md") {
+      text-align: center;
+    }
+  }
+
+  .waitlist__form {
+    position: relative;
+
+    max-width: 560px;
+    width: 100%;
+  }
+
+  .waitlist__message {
+    padding-top: 5px;
+
+    text-align: center;
+
+    color: $red;
+  }
+
+  .waitlist__btn {
+    width: auto;
+  }
+
+  .waitlist__btn-secure {
+    position: absolute;
+    top: -24px;
+    right: -48px;
+
+    @include respond-to("625px") {
+      right: -10px;
+    }
+  }
+
+  &.waiting-list {
+    height: 100%;
+
+    background-image: url("/assets/images/other/bg-waitlist.png");
+  }
+}
+
+/* ------------------------------- divider ------------------------------- */
+.divider {
+  height: 18px;
+
+  background-image: url("/assets/images/other/divider.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* ------------------------------- loader-waitlist ------------------------------- */
+.loader-waitlist {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+
+  @include respond-to("425px") {
+    left: 0;
+    right: inherit;
+  }
+
+  .loader-waitlist__primary:before,
+  .loader-waitlist__primary:after {
+    position: absolute;
+    top: 0;
+    content: '';
+  }
+
+  .loader-waitlist__primary:before {
+    left: -17px;
+  }
+
+  .loader-waitlist__primary:after {
+    left: 17px;
+    -webkit-animation-delay: 0.32s !important;
+    animation-delay: 0.32s !important;
+  }
+
+  .loader-waitlist__primary:before,
+  .loader-waitlist__primary:after,
+  .loader-waitlist__primary {
+    width: 9px;
+    height: 18px;
+
+    background: $red;
+
+    -webkit-animation: loading-keys-app-loading 0.8s infinite ease-in-out;
+    animation: loading-keys-app-loading 0.8s infinite ease-in-out;
+  }
+
+  .loader-waitlist__primary {
+    position: absolute;
+    top: 8px;
+    right: 45px;
+
+    margin: auto;
+
+    text-indent: -9999em;
+    -webkit-animation-delay: 0.16s !important;
+    animation-delay: 0.16s !important;
+
+    @include respond-to("425px") {
+      right: inherit;
+      left: 20px;
+    }
+  }
+
+  @-webkit-keyframes loading-keys-app-loading {
+    0%,
+    80%,
+    100% {
+      opacity: .75;
+      box-shadow: 0 0 $red;
+      height: 18px;
+    }
+
+    40% {
+      opacity: 1;
+      box-shadow: 0 -8px $red;
+      height: 23px;
+    }
+  }
+
+  @keyframes loading-keys-app-loading {
+    0%,
+    80%,
+    100% {
+      opacity: .75;
+      box-shadow: 0 0 $red;
+      height: 18px;
+    }
+
+    40% {
+      opacity: 1;
+      box-shadow: 0 -8px $red;
+      height: 23px;
+    }
+  }
+}
+ 
+
+.waitlist__title2{
+    text-align: center;
+    font-family: "Space Quest", sans-serif;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0 auto;
+    color: $white;
+    
+    @include respond-to("md") {
+      font-size: 32px;
+    }
+}

@@ -1,0 +1,23 @@
+@import "abstracts/variables";
+@import "abstracts/mixins";
+
+::ng-deep .popup-modal {
+  max-height: 250px;
+  height: 100%;
+  margin: 20px;
+
+  background-color: $yellow !important;
+}
+
+::ng-deep .mat-mdc-dialog-container .mdc-dialog__surface {
+  background-color: $yellow !important;
+  border-radius: 12px !important;
+}
+
+::ng-deep .cdk-overlay-pane {
+  border-radius: 12px;
+}
+
+::ng-deep .cdk-overlay-pane .popup-modal {
+  max-width: none !important;
+}

@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+// Configuration and helpers
+@import "abstracts/variables", "abstracts/functions", "abstracts/mixins";
+
+// Vendors
+@import "vendors/reset";
+
+// Base stuff
+@import "base/base", "base/fonts", "base/typography", "base/helpers";
+
+// Components
+@import "components/buttons", "components/inputs", "components/cards",
+  "components/modals", "components/notifications";
+
+// Layout-related sections
+@import "layout/navigation", "layout/sections", "layout/common", "layout/header",
+  "layout/footer";
+
+// Page-specific styles
+@import "pages/landing";
+
+// Themes
+@import "themes/default";

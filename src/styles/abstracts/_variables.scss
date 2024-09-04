@@ -1,0 +1,68 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+/// Regular font family
+/// @type List
+$text-font-stack: "SF Pro Display", "Arial", sans-serif !default;
+
+/// Code (monospace) font family
+/// @type List
+$code-font-stack: "Courier New", "DejaVu Sans Mono", "Bitstream Vera Sans Mono",
+  "Monaco", monospace !default;
+
+// Colors
+$white: #ffffff;
+$black: #000000;
+$black-semi: #0a0909;
+$grey: #969696;
+$red: #ce331c;
+$redBright: #E1090A;
+$yellow: #ffe459;
+$blue: #1C6ECE;
+
+/* ---------------------------------- Base ---------------------------------- */
+//$accent-color: $purple;
+
+/* ---------------------------------- Text ---------------------------------- */
+$text-main: rgba($white, 0.6);
+
+/* --------------------------------- Background -------------------------------- */
+$bg-color: $black-semi;
+
+/* --------------------------------- Buttons -------------------------------- */
+//$button-bg: rgba($accent-color, 0.1);
+//$button-text: $accent-color;
+//
+//$button-active-text: $white;
+//$button-active-bg: $accent-color;
+//
+//$button-disabled-bg: #e6e6e6;
+//$button-execute-bg: #e6e6e6;
+
+/* ---------------------------------- Cards --------------------------------- */
+//$card-bg: $grey;
+//$card-progress-bg: $dark-grey;
+//
+//$auth-card-bg: $white;
+
+/* --------------------------------- Inputs --------------------------------- */
+//$input-bg: $white;
+//
+//$input-bg-dark: $grey;
+//$input-placeholder: rgba($dark, 0.4);
+
+/* ---------------------------------- Utils --------------------------------- */
+//$divider-color: rgba($text-main, 0.15);
+
+/// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+
+$breakpoints: (
+  "xs": 360px,
+  "sm": 480px,
+  "md": 768px,
+  "lg": 1040px,
+  "xl": 1120px,
+) !default;

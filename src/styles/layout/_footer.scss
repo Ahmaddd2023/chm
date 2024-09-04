@@ -1,0 +1,60 @@
+/* ------------------------------- l-footer ------------------------------- */
+.l-footer {
+  .l-footer__container {
+    padding: 70px 20px;
+
+    @include respond-to("md") {
+      padding: 50px 20px;
+    }
+  }
+
+  .l-footer__content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    @include respond-to("md") {
+      flex-direction: column;
+      gap: 15px;
+    }
+  }
+
+  .l-footer__copy {
+  }
+
+  .l-footer__info {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+  }
+
+  p {
+    font-family: "SF Pro Display", sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+
+    color: $grey;
+  }
+
+  .l-footer__link {
+    font-family: "SF Pro Display", sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+
+    color: $grey;
+
+    transition: all 0.1s ease-in-out;
+  }
+
+  .l-footer__link:hover {
+    color: rgba($yellow, 0.8);
+
+    transition: all 0.3s ease-in-out;
+  }
+}

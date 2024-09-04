@@ -1,0 +1,95 @@
+@import "abstracts/variables";
+@import "abstracts/mixins";
+
+::ng-deep .stripe {
+  display: none;
+  width: 325px;
+
+  @include respond-to("md") {
+    width: 360px;
+  }
+
+  @include respond-to("480px") {
+    width: 350px;
+  }
+
+  @include respond-to("470px") {
+    width: 340px;
+  }
+
+  @include respond-to("460px") {
+    width: 330px;
+  }
+
+  @include respond-to("450px") {
+    width: 320px;
+  }
+
+  @include respond-to("440px") {
+    width: 310px;
+  }
+
+  @include respond-to("430px") {
+    width: 300px;
+  }
+
+  @include respond-to("420px") {
+    width: 290px;
+  }
+
+  @include respond-to("410px") {
+    width: 280px;
+  }
+
+  @include respond-to("400px") {
+    width: 270px;
+  }
+
+  @include respond-to("390px") {
+    width: 280px;
+  }
+
+  @include respond-to("380px") {
+    width: 270px;
+  }
+
+  @include respond-to("370px") {
+    width: 262px;
+  }
+}
+
+.stripe__active {
+  display: block;
+}
+
+::ng-deep #stripe__input {
+  display: none;
+  width: 100%;
+  padding: 17px 15px;
+
+  color: $white;
+  background-color: rgba($white, 0.1);
+  border-radius: 8px;
+
+  transition: all 0.08s ease-in-out;
+
+  input {
+    transition: all 0.08s ease-in-out;
+    transition-property: all;
+
+    input:-webkit-autofill,
+    input:-webkit-autofill:focus {
+      transition: background-color 600000s 0s, color 600000s 0s;
+    }
+  }
+
+  @include respond-to("420px") {
+    padding: 17px 7px;
+  }
+
+  @include respond-to("370px") {
+    padding: 17px 5px;
+  }
+}
+
+

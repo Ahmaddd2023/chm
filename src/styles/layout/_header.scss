@@ -1,0 +1,43 @@
+/* ------------------------------- c-header ------------------------------- */
+
+.c-header {
+  .c-header__container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    padding: 40px 20px;
+  }
+
+  .c-header__back {
+    cursor: pointer;
+  }
+
+  .c-header__title {
+    font-family: "Space Quest", sans-serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    color: $white;
+  }
+}
+
+/* ------------------------------- p-header ------------------------------- */
+
+.p-header {
+  background-image: url("/assets/images/other/bg-profile.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .p-header__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+  }
+
+  .p-header__logo {
+  }
+}

@@ -1,0 +1,45 @@
+/**
+ * Basic typography style for text
+ */
+body {
+  color: $text-main;
+  font: normal 100% / 1.2 $text-font-stack;
+  letter-spacing: normal;
+}
+
+.text {
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 28px;
+
+  color: rgba($white, 0.6);
+}
+
+.text--normal {
+  font-weight: 600;
+  line-height: normal;
+}
+
+.text--grey {
+  color: $grey;
+}
+
+.text--white {
+  color: $white;
+}
+
+.text-small {
+  font-family: "Space Quest", sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  color: $yellow;
+}
+
+.text-small--red {
+  color: $redBright;
+}

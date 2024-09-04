@@ -1,0 +1,164 @@
+<header class="p-header">
+  <div class="p-header__container container">
+    <a routerLink="/" class="p-header__logo">
+      <img src="/assets/images/icons/logo.svg" alt="" />
+    </a>
+  </div>
+</header>
+<main>
+  <section class="s-profile">
+    <div class="s-profile__container container">
+      <article class="s-profile__table card-table">
+        <h2 class="card-table__title">Transactions history</h2>
+        <table class="card-table__table">
+          <tbody class="card-table__tbody">
+            <tr
+              *ngFor="let item of transactions"
+              class="card-table__tr"
+              [ngClass]="{ 'text--white': item.type === 'payment' }"
+            >
+              <td
+                *ngIf="
+                  item.type === 'payment' && item.data.status === 'succeeded'
+                "
+              >
+                +{{ item.amount }} Credits
+              </td>
+              <td
+                *ngIf="item.type === 'invoice' && item.data.service === 'champ'"
+              >
+                -{{ item.amount }} Credits
+              </td>
+              <td
+                *ngIf="
+                  (item.type === 'payment' &&
+                    item.data.status === 'succeeded') ||
+                  (item.type === 'invoice' && item.data.service === 'champ')
+                "
+              >
+                {{ item.description !== "Stripe payment" ? "PayPal Payment" : item.description | titlecase }}
+              </td>
+              <td
+                *ngIf="
+                  (item.type === 'payment' &&
+                    item.data.status === 'succeeded') ||
+                  (item.type === 'invoice' && item.data.service === 'champ')
+                "
+              >
+                {{ item.date | date: "dd.MM.yyyy – HH:mm" }}
+              </td>
+              <td *ngIf="false" class="text-small">repeat</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+      <div class="s-profile__card-pay card-pay">
+        <div class="card-pay__header">
+          <h2 class="card-pay__title">{{ balance$ | async }} credits</h2>
+          <p class="card-pay__user text text--normal text--grey">
+            {{ (customerInfo$ | async)?.external_account?.name }}
+            (@{{ (customerInfo$ | async)?.external_account?.username }})
+          </p>
+          <div class="card-pay__links">
+            <a
+              href="https://discord.gg/hBJscte8"
+              target="_blank"
+              class="card-pay__open text-small"
+            >
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12.8467 3.55345C11.96 3.14011 11 2.84011 10 2.66678C9.99123 2.6665 9.98251 2.66814 9.97444 2.6716C9.96638 2.67505 9.95917 2.68024 9.95333 2.68678C9.83333 2.90678 9.69333 3.19345 9.6 3.41345C8.53933 3.25345 7.46066 3.25345 6.4 3.41345C6.30666 3.18678 6.16666 2.90678 6.04 2.68678C6.03333 2.67345 6.01333 2.66678 5.99333 2.66678C4.99333 2.84011 4.04 3.14011 3.14666 3.55345C3.14 3.55345 3.13333 3.56011 3.12666 3.56678C1.31333 6.28011 0.81333 8.92011 1.06 11.5334C1.06 11.5468 1.06666 11.5601 1.08 11.5668C2.28 12.4468 3.43333 12.9801 4.57333 13.3334C4.59333 13.3401 4.61333 13.3334 4.62 13.3201C4.88666 12.9534 5.12666 12.5668 5.33333 12.1601C5.34666 12.1334 5.33333 12.1068 5.30666 12.1001C4.92666 11.9534 4.56666 11.7801 4.21333 11.5801C4.18666 11.5668 4.18666 11.5268 4.20666 11.5068C4.28 11.4534 4.35333 11.3934 4.42666 11.3401C4.44 11.3268 4.46 11.3268 4.47333 11.3334C6.76666 12.3801 9.24 12.3801 11.5067 11.3334C11.52 11.3268 11.54 11.3268 11.5533 11.3401C11.6267 11.4001 11.7 11.4534 11.7733 11.5134C11.8 11.5334 11.8 11.5734 11.7667 11.5868C11.42 11.7934 11.0533 11.9601 10.6733 12.1068C10.6467 12.1134 10.64 12.1468 10.6467 12.1668C10.86 12.5734 11.1 12.9601 11.36 13.3268C11.38 13.3334 11.4 13.3401 11.42 13.3334C12.5667 12.9801 13.72 12.4468 14.92 11.5668C14.9333 11.5601 14.94 11.5468 14.94 11.5334C15.2333 8.51344 14.4533 5.89345 12.8733 3.56678C12.8667 3.56011 12.86 3.55345 12.8467 3.55345ZM5.68 9.94011C4.99333 9.94011 4.42 9.30678 4.42 8.52678C4.42 7.74678 4.98 7.11345 5.68 7.11345C6.38666 7.11345 6.94666 7.75345 6.94 8.52678C6.94 9.30678 6.38 9.94011 5.68 9.94011ZM10.3267 9.94011C9.64 9.94011 9.06666 9.30678 9.06666 8.52678C9.06666 7.74678 9.62666 7.11345 10.3267 7.11345C11.0333 7.11345 11.5933 7.75345 11.5867 8.52678C11.5867 9.30678 11.0333 9.94011 10.3267 9.94011Z"
+                  fill="#FFE459"
+                />
+              </svg>
+              <span>open discord server</span>
+            </a>
+<!--            <span class="card-pay__slash">-->
+<!--              <img src="/assets/images/icons/untitled.svg" alt="" />-->
+<!--            </span>-->
+            <a (click)="logout()" class="card-pay__switch text-small">
+              switch user
+            </a>
+          </div>
+        </div>
+        <hr class="card-pay__divider" />
+        <div class="card-pay__main">
+          <p class="card-pay__buy text-small text-small--red">
+            buy more credits
+          </p>
+          <div class="btn-group">
+            <div *ngFor="let value of price" class="btn-group__check">
+              <label [for]="value.label">{{ value.label }}</label>
+              <input
+                class="btn-group__input"
+                [formControl]="amount"
+                [id]="value.label"
+                type="radio"
+                name="price"
+                [value]="value.value"
+              />
+              <button
+                class="btn-buy"
+                type="button"
+                (click)="onSelectPrice(value.value)"
+              >
+                <span>{{ value.label }}</span>
+              </button>
+            </div>
+          </div>
+          <div class="card-pay__group">
+            <div class="card-pay__input input-group">
+              <label for="amount">Amount</label>
+              <input
+                [formControl]="amount"
+                type="text"
+                id="amount"
+                placeholder="Custom..."
+                [value]="amount.value"
+              />
+            </div>
+            <div
+              class="card-pay__summ-to-pay"
+            >
+              <span class="card-pay__summ">
+                 {{ this.amount.value | pointsToUsd | number: "" : "en-En" }}
+              </span>
+              <span class="card-pay__currency">USD</span>
+            </div>
+          </div>
+          <p class="card-pay__text">* Each credit costs 0.10 USD</p>
+        </div>
+        <hr class="card-pay__divider" />
+        <div class="card-pay__main">
+          <div
+            class="stripe"
+            [ngClass]="{ stripe__active: isPay && !amount.invalid }"
+          >
+            <div id="stripe__input">
+              <!--Stripe.js injects the Card Element-->
+            </div>
+            </div>
+            <button (click)="start()" type="submit"
+                    class="card-pay__btn btn-price"
+                    [disabled]="isDisabledBtn || amount.invalid || amount.value === null || amount.value < 5"
+            >{{payBtn }}</button>
+            <div class="card-pay__text-devider">OR</div>
+            <button
+              [disabled]="isDisabledBtn || amount.invalid || amount.value === null || amount.value < 5"
+              class="btn-price btn-price__paypal"
+               (click)="onPayPalOpen()"
+            >
+              <img  [ngClass]="{'card-pay__img-disabled': isDisabledBtn || amount.invalid || amount.value === null || amount.value < 5}"
+                src="/assets/images/icons/ic_round-paypal.svg" alt="" />
+              <p>{{payBtnPP }}</p></button>
+        </div>
+     </div>
+    </div>
+  </section>
+</main>

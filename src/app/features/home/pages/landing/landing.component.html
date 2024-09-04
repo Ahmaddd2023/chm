@@ -1,0 +1,420 @@
+<header class="waitlist">
+  <div class="waitlist__container container">
+    <div class="waitlist__logo">
+      <img src="/assets/images/icons/logo.svg" alt=""/>
+    </div>
+    <h1 class="waitlist__title waitlist__title--desktop">
+      Welcome to a new<br/>era of content creation
+    </h1>
+    <h1 class="waitlist__title waitlist__title--mobile">
+      Welcome to a new era of content creation
+    </h1>
+    <form [formGroup]="emailFormFirst" class="waitlist__form">
+      <div class="input-group input-group--loader">
+        <label for="email">Email</label>
+        <input
+          formControlName="email"
+          type="email"
+          id="email"
+          placeholder="Your email"
+          (keyup.enter)="saveEmailFirst()"
+        />
+        <button
+          *ngIf="!isLoaderFirst"
+          (click)="saveEmailFirst()"
+          class="btn-waitlist"
+          type="button"
+          [disabled]="
+            !getEmailFirst?.value || emailFormFirst.invalid || isLoaderFirst
+          "
+        >
+          <span>Join the waitlist</span>
+          <img src="/assets/images/icons/btn-arrow.svg" alt=""/>
+        </button>
+        <button
+          *ngIf="isLoaderFirst"
+          class="btn-waitlist btn-waitlist--loader"
+          type="button"
+        >
+          <span class="loader-waitlist">
+            <span class="loader-waitlist__primary"></span>
+          </span>
+        </button>
+      </div>
+      <button class="waitlist__btn-secure btn-secure">secure your spot</button>
+      <p
+        *ngIf="getEmailFirst?.invalid && getEmailFirst?.touched"
+        class="waitlist__message text"
+      >
+        <span
+          *ngIf="
+            getEmailFirst &&
+            getEmailFirst.errors &&
+            getEmailFirst.errors['pattern']
+          "
+        >
+          Enter the correct email!
+        </span>
+      </p>
+      <p
+        *ngIf="errorEmail"
+        class="waitlist__message text"
+      >
+        {{ errorEmail }}
+      </p>
+    </form>
+  </div>
+</header>
+<main>
+  <section class="l-waitlist">
+    <div class="l-waitlist__container container">
+      <div class="l-waitlist__col">
+        <article class="card-big">
+          <h4 class="card-big__title">Unleash the creator within you</h4>
+          <p class="card-big__text text">
+            Turn text & videos into mind-blowing videos with our advanced AI
+            generation engine.
+          </p>
+          <a class="card-big__link" href="">
+            <span>secure your spot in the waitlist</span>
+            <img src="/assets/images/icons/link-arrow.svg" alt=""/>
+          </a>
+        </article>
+        <div class="l-waitlist__img">
+          <img src="/assets/images/landing/img-01.jpg" alt=""/>
+        </div>
+      </div>
+      <div class="l-waitlist__col">
+        <article class="card-middle">
+          <div class="card-middle__content">
+            <h4 class="card-middle__title">Why jump on the waitlist</h4>
+            <p class="card-middle__text text">
+              Unleash boundless creativity & connect with creative tribe.
+            </p>
+          </div>
+        </article>
+        <article class="card-middle card-middle--black">
+          <img
+            class="card-middle__icon"
+            src="/assets/images/icons/icon-1.svg"
+            alt=""
+          />
+          <div class="card-middle__content">
+            <h4 class="card-middle__subtitle">Sneak Peek Access</h4>
+            <p class="card-middle__text text text--normal">
+              Those who hop on our waitlist get VIP access to our AI tool.
+              Imagine being one of the first to ride the wave of the future –
+              it's an experience you won't want to miss!
+            </p>
+          </div>
+        </article>
+        <article class="card-middle card-middle--black">
+          <img
+            class="card-middle__icon"
+            src="/assets/images/icons/icon-2.svg"
+            alt=""
+          />
+          <div class="card-middle__content">
+            <h4 class="card-middle__subtitle">Exclusive Goodies</h4>
+            <p class="card-middle__text text text--normal">
+              As a waitlist VIP, you'll unlock special offers and discounts that
+              are hotter than a double-shot espresso. Get ready for deals that
+              will make your wallet do a happy dance!
+            </p>
+          </div>
+        </article>
+        <article class="card-middle card-middle--black">
+          <img
+            class="card-middle__icon"
+            src="/assets/images/icons/icon-3.svg"
+            alt=""
+          />
+          <div class="card-middle__content">
+            <h4 class="card-middle__subtitle">Join the Creative Revolution</h4>
+            <p class="card-middle__text text text--normal">
+              Become part of a community buzzing with creativity! Connect with
+              fellow content creators, swap ideas, and revel in the anticipation
+              of revolutionizing the way you create content.
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section class="waitlist">
+    <div class="waitlist__container container">
+      <h2 class="waitlist__title waitlist__title--desktop">
+        Dive into the future<br/>of content creation!
+      </h2>
+      <h2 class="waitlist__title waitlist__title--mobile">
+        Dive into the future of content creation!
+      </h2>
+      <form [formGroup]="emailFormSecond" class="waitlist__form">
+        <div class="input-group">
+          <label for="email-2">Email</label>
+          <input
+            formControlName="email"
+            type="email"
+            id="email-2"
+            placeholder="Your email"
+            (keyup.enter)="saveEmailSecond()"
+          />
+          <button
+            *ngIf="!isLoaderSecond"
+            (click)="saveEmailSecond()"
+            class="btn-waitlist"
+            type="button"
+            [disabled]="
+              !getEmailSecond?.value ||
+              emailFormSecond.invalid ||
+              isLoaderSecond
+            "
+          >
+            <span>Join the waitlist</span>
+            <img src="/assets/images/icons/btn-arrow.svg" alt=""/>
+          </button>
+          <button
+            *ngIf="isLoaderSecond"
+            class="btn-waitlist btn-waitlist--loader"
+            type="button"
+          >
+            <span class="loader-waitlist">
+              <span class="loader-waitlist__primary"></span>
+            </span>
+          </button>
+        </div>
+        <button class="waitlist__btn-secure btn-secure">
+          secure your spot
+        </button>
+        <p
+          *ngIf="getEmailSecond?.invalid && getEmailSecond?.touched"
+          class="waitlist__message text"
+        >
+          <span
+            *ngIf="
+              getEmailSecond &&
+              getEmailSecond.errors &&
+              getEmailSecond.errors['pattern']
+            "
+          >
+            Enter the correct email!
+          </span>
+        </p>
+        <p
+          *ngIf="errorEmail"
+          class="waitlist__message text"
+        >
+          {{ errorEmail }}
+        </p>
+      </form>
+    </div>
+  </section>
+
+
+
+            
+             
+             
+
+  <section class="l-waitlist">
+    <div class="l-waitlist__container container2">
+      <div class="l-tile__cards2">
+        <h2 class="waitlist__title2" style="padding-bottom: 50px;">types of video generation</h2>
+
+        <article class="l-tile__card2 card-big2">
+          <div class="">
+            <img src="/assets/images/landing/img1.png" alt=""/>
+          </div>
+          <div class="card-padding-2">
+            <h4 class="card-big__title2">Christmas</h4>
+            <p class="card-big__text2 text">
+              Turn your video into a winter fairy tale. Add snow motifs and the magic of Christmas. Generate a video
+              filled with Christmas magic and share your Christmas Story with your friends.
+            </p>
+            <p class="card-big__link2 card-big__link--not-hover">
+              <span>generate now</span>
+              <img src="/assets/images/icons/link-arrow.svg" alt=""/>
+            </p>
+          </div>
+        </article>
+
+             
+             
+             
+             
+          <article class="l-tile__card2 card-big2">   
+    <div class="video-container">
+        <video id="video1" preload="auto" poster="" class="video" autoplay loop muted>
+            <source src="/assets/video/video1.mp4" type="video/mp4" />
+        </video>
+    </div>
+    <div class="card-padding-2">
+        <h4 class="card-big__title2">St. Valentine</h4>
+        <p class="card-big__text2 text">
+            Turn your video into a romantic love story. Add the warmth of your heart and a little romance. Generate a touching romantic video and share your Love Story with someone you love.
+        </p>
+        <p class="card-big__link2 card-big__link--not-hover">
+            <span>create now</span>
+            <img src="/assets/images/icons/link-arrow.svg" alt="" />
+        </p>
+    </div>
+</article>
+
+<article class="l-tile__card2 card-big2"> 
+    <div class="video-container">
+        <video id="video2" preload="auto" poster="" class="video" loop muted>
+            <source src="/assets/video/video2.mp4" type="video/mp4" />
+        </video>
+    </div>
+    <div class="card-padding-2">
+        <h4 class="card-big__title2">Spring (female only)</h4>
+        <p class="card-big__text2 text">
+            Turn your video into a spring fairy tale. Add some rising sun rays and bright spring greenery. Generate a video filled with spring motifs and share your Spring Story with friends.
+        </p>
+        <p class="card-big__link2 card-big__link--not-hover">
+            <span>try now</span>
+            <img src="/assets/images/icons/link-arrow.svg" alt="" />
+        </p>
+    </div>
+</article>
+
+                 
+     
+       
+            </div>
+        
+          </div>
+    </section>
+    
+    
+    
+    
+
+
+          
+
+
+
+
+
+ <section class="waitlist">
+    <div class="waitlist__container container">
+      <div class="waitlist__content">
+        <h2 class="waitlist__title">It's time to create!</h2>
+        <p class="waitlist__text">
+          Catapult your creative expression to unparalleled heights
+        </p>
+      </div>
+      <form [formGroup]="emailFormThird" class="waitlist__form">
+        <div class="input-group">
+          <label for="email-3">Email</label>
+          <input
+            formControlName="email"
+            type="email"
+            id="email-3"
+            placeholder="Your email"
+            (keyup.enter)="saveEmailThird()"
+          />
+          <button
+            *ngIf="!isLoaderThird"
+            (click)="saveEmailThird()"
+            class="btn-waitlist"
+            type="button"
+            [disabled]="
+              !getEmailThird?.value || emailFormThird.invalid || isLoaderThird
+            "
+          >
+            <span>Join the waitlist</span>
+            <img src="/assets/images/icons/btn-arrow.svg" alt=""/>
+          </button>
+          <button
+            *ngIf="isLoaderThird"
+            class="btn-waitlist btn-waitlist--loader"
+            type="button"
+          >
+            <span class="loader-waitlist">
+              <span class="loader-waitlist__primary"></span>
+            </span>
+          </button>
+        </div>
+        <button class="waitlist__btn-secure btn-secure">
+          secure your spot
+        </button>
+        <p
+          *ngIf="getEmailThird?.invalid && getEmailThird?.touched"
+          class="waitlist__message text"
+        >
+          <span
+            *ngIf="
+              getEmailThird &&
+              getEmailThird.errors &&
+              getEmailThird.errors['pattern']
+            "
+          >
+            Enter the correct email!
+          </span>
+        </p>
+        <p
+          *ngIf="errorEmail"
+          class="waitlist__message text"
+        >
+          {{ errorEmail }}
+        </p>
+      </form>
+    </div>
+  </section>
+
+
+
+  <section class="l-tile">
+    <div class="l-tile__container container">
+      <div class="l-tile__cards">
+        <div class="l-tile__card">
+          <img src="/assets/images/landing/img-02.jpg" alt=""/>
+        </div>
+        <article class="l-tile__card card-big">
+          <div class="card-big__icon">
+            <img src="/assets/images/landing/avatar-01.png" alt=""/>
+          </div>
+          <h4 class="card-big__title">Dani Verdari</h4>
+          <p class="card-big__text text">
+            “I tested ChampAI and it’s awesome!<br/>
+            It's the secret sauce that can turn your creativity into pure
+            mind-boggling content.<br/><br/>
+            I'm absolutely thrilled about what the future holds with ChampAI!”
+          </p>
+          <p class="card-big__link card-big__link--not-hover">
+            <span>Content creator, 7.5M+ followers</span>
+            <!--            <img src="/assets/images/icons/link-arrow.svg" alt="" />-->
+          </p>
+        </article>
+        <div class="l-tile__card">
+          <img src="/assets/images/landing/img-03.jpg" alt=""/>
+        </div>
+        <div class="l-tile__card">
+          <img src="/assets/images/landing/img-04.jpg" alt=""/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+<footer class="l-footer">
+  <div class="l-footer__container container">
+    <div class="l-footer__content">
+      <p class="l-footer__copy">2023 ChampAI. All rights reserved.</p>
+      <div class="l-footer__info">
+        <a class="l-footer__link" routerLink="/terms-of-service">
+          Terms of Service
+        </a>
+        <a class="l-footer__link" routerLink="/privacy-policy"
+        >Privacy Policy</a
+        >
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+

@@ -1,0 +1,33 @@
+// -----------------------------------------------------------------------------
+// This file contains all @font-face declarations, if any.
+// -----------------------------------------------------------------------------
+
+/* ----------------------------- SF Pro Display ----------------------------- */
+@font-face {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../../assets/fonts/SF-Pro-Display/SF-Pro-Display-Medium.woff");
+}
+
+@font-face {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../../assets/fonts/SF-Pro-Display/SF-Pro-Display-Semibold.woff");
+}
+
+@font-face {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../../assets/fonts/SF-Pro-Display/SF-Pro-Display-Bold.woff");
+}
+
+/* ----------------------------- Space Quest ----------------------------- */
+@font-face {
+  font-family: "Space Quest";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../../assets/fonts/Space-Quest/Space-Quest-Regular.ttf");
+}
